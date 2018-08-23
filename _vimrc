@@ -10,7 +10,7 @@ nnoremap <S-X> :qa<CR>
 nnoremap <S-S> :w<CR>
 nnoremap <C-K><C-D> ggvG= " like visual studio
 
-set number
+set number relativenumber
 set ruler
 set wildmenu
 set cmdheight=2
@@ -19,7 +19,7 @@ set cmdheight=2
 let mapleader='`'
 
 " CTAGS
-set tags=./.tags;,.tags
+set tags=tags;
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -108,6 +108,7 @@ Plug 'tungd/unite-session'
 Plug 't9md/vim-unite-lines'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
+Plug 'mihais/vim-mark'
 
 call plug#end()
 
@@ -293,6 +294,9 @@ nmap <Leader>ft :LeaderfTag<cr>
 nmap <Leader>fb :LeaderfBuffer<cr>
 nmap <Leader>fm :LeaderfFunction<cr>
 
+" current folder with git root
+let g:Lf_WorkingDirectoryMode = 'Ac'  
+
 " Notes:
 "<C-C> : quit from LeaderF. 
 "<C-R> : switch between fuzzy search mode and regex mode. 
@@ -350,3 +354,7 @@ endif
 " Gutentags
 """"""""""""""""""""""""""""""
 let g:gutentags_enabled = 0
+
+""""""""""""""""""""""""""""""
+" Highlight
+""""""""""""""""""""""""""""""
